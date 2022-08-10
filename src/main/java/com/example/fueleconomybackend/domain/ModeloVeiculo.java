@@ -10,7 +10,7 @@ public class ModeloVeiculo {
     private Integer id;
 
     @Column(length = 100, nullable = false)
-    private String name;
+    private String nome;
 
     @Column(length = 100, nullable = false)
     private String fabricante;
@@ -18,9 +18,9 @@ public class ModeloVeiculo {
     public ModeloVeiculo() {
     }
 
-    public ModeloVeiculo(Integer id, String name, String fabricante) {
+    public ModeloVeiculo(Integer id, String nome, String fabricante) {
         this.id = id;
-        this.name = name;
+        this.nome = nome;
         this.fabricante = fabricante;
     }
 
@@ -32,12 +32,12 @@ public class ModeloVeiculo {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String name) {
+        this.nome = name;
     }
 
     public String getFabricante() {

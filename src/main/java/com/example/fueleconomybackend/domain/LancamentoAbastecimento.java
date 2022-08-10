@@ -2,16 +2,17 @@ package com.example.fueleconomybackend.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
-public class LancamenoAbastecimento {
+public class LancamentoAbastecimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(columnDefinition = "date", nullable = false)
-    private LocalDate data;
+    private LocalDateTime data;
 
     @Column(nullable = false)
     private Float volume;
@@ -25,10 +26,10 @@ public class LancamenoAbastecimento {
     @ManyToOne
     private Veiculo veiculo;
 
-    public LancamenoAbastecimento() {
+    public LancamentoAbastecimento() {
     }
 
-    public LancamenoAbastecimento(Integer id, LocalDate data, Float volume, Float hodometro, Float valorLitro, Veiculo veiculo) {
+    public LancamentoAbastecimento(Integer id, LocalDateTime data, Float volume, Float hodometro, Float valorLitro, Veiculo veiculo) {
         this.id = id;
         this.data = data;
         this.volume = volume;
@@ -45,11 +46,11 @@ public class LancamenoAbastecimento {
         this.id = id;
     }
 
-    public LocalDate getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
