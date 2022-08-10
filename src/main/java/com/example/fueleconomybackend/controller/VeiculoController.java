@@ -15,15 +15,15 @@ import java.net.URI;
 @RestController
 @RequestMapping("/veiculos")
 public class VeiculoController {
-    private final SaveVeiculo saveVeiculo;
+    private final SaveVeiculo save;
 
-    public VeiculoController(SaveVeiculo saveVeiculo) {
-        this.saveVeiculo = saveVeiculo;
+    public VeiculoController(SaveVeiculo save) {
+        this.save = save;
     }
 
     @PostMapping
-    public ResponseEntity<SaveVeiculoOutput> save(@RequestBody SaveVeiculoInput input) {
-        SaveVeiculoOutput saved = this.saveVeiculo.execute(input);
+    public ResponseEntity<SaveVeiculoOutput> saveVeiculo(@RequestBody SaveVeiculoInput input) {
+        SaveVeiculoOutput saved = this.save.execute(input);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(saved.getId()).toUri();
 
