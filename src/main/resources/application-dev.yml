@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://x71wqc4m22j8e3ql.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ezobf0ehe8sm70e4
+    username: idq4qxp4ee5g3k2s
+    password: u0km6w8vlh4l8er8
+    driver-class-name: com.mysql.cj.jdbc.Driver
