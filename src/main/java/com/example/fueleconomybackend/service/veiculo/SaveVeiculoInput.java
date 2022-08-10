@@ -1,50 +1,23 @@
-package com.example.fueleconomybackend.domain;
+package com.example.fueleconomybackend.service.veiculo;
 
-import javax.persistence.*;
-
-@Entity
-public class Veiculo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Column(length = 10, nullable = false)
+public class SaveVeiculoInput {
     private String placa;
-
-    @Column(nullable = false)
     private Float volumeReservatorio;
-
-    @Column(nullable = false)
     private Integer anoFabricacao;
-
-    @Column(nullable = false)
     private Integer anoModelo;
-
-    @Column(nullable = false)
     private Float hodometroInicial;
+    private Integer modeloVeiculoId;
 
-    @ManyToOne
-    private ModeloVeiculo modeloVeiculo;
-
-    public Veiculo() {
+    public SaveVeiculoInput() {
     }
 
-    public Veiculo(Integer id, String placa, Float volumeReservatorio, Integer anoFabricacao, Integer anoModelo, Float hodometroInicial, ModeloVeiculo modeloVeiculo) {
-        this.id = id;
+    public SaveVeiculoInput(String placa, Float volumeReservatorio, Integer anoFabricacao, Integer anoModelo, Float hodometroInicial, Integer modeloVeiculoId) {
         this.placa = placa;
         this.volumeReservatorio = volumeReservatorio;
         this.anoFabricacao = anoFabricacao;
         this.anoModelo = anoModelo;
         this.hodometroInicial = hodometroInicial;
-        this.modeloVeiculo = modeloVeiculo;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+        this.modeloVeiculoId = modeloVeiculoId;
     }
 
     public String getPlaca() {
@@ -83,15 +56,15 @@ public class Veiculo {
         return hodometroInicial;
     }
 
-    public void setHodometroInicial(Float hodometro_inicial) {
-        this.hodometroInicial = hodometro_inicial;
+    public void setHodometroInicial(Float hodometroInicial) {
+        this.hodometroInicial = hodometroInicial;
     }
 
-    public ModeloVeiculo getModeloVeiculo() {
-        return modeloVeiculo;
+    public Integer getModeloVeiculoId() {
+        return modeloVeiculoId;
     }
 
-    public void setModeloVeiculo(ModeloVeiculo modeloVeiculo) {
-        this.modeloVeiculo = modeloVeiculo;
+    public void setModeloVeiculoId(Integer modeloVeiculoId) {
+        this.modeloVeiculoId = modeloVeiculoId;
     }
 }
